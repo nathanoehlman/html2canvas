@@ -292,7 +292,7 @@ export default class CanvasRenderer implements RenderTarget<HTMLCanvasElement> {
     }
 
     resizeImage(image: ImageElement, size: Size): ImageElement {
-        if (image.width === size.width && image.height === size.height) {
+        if ((image.width === size.width && image.height === size.height) || (size.width < 0 || size.height < 0)) {
             return image;
         }
 
