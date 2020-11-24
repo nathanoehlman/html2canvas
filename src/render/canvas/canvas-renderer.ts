@@ -528,7 +528,7 @@ export class CanvasRenderer {
     }
 
     resizeImage(image: HTMLImageElement, width: number, height: number): HTMLCanvasElement | HTMLImageElement {
-        if (image.width === width && image.height === height) {
+        if ((image.width === width && image.height === height) || (width < 0 || height < 0)) {
             return image;
         }
 
